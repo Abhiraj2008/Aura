@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f0e6;
+  color: #181816;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
+
+/* Safe area insets for Android and iOS mobile navigation bars */
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+.pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+
+/* Authentic Paper Texture using SVG filter noise */
+.paper-texture {
+  background-color: #f5f0e6;
+  background-image: 
+    radial-gradient(#d5ccb8 0.75px, transparent 0.75px),
+    radial-gradient(#e8dfce 0.75px, #f5f0e6 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.chalk-texture {
+  background-color: #161513;
+  background-image: 
+    radial-gradient(#292723 0.75px, transparent 0.75px),
+    radial-gradient(#1f1e1a 0.75px, #161513 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Ruled notebook line styling for lyrics and lists */
+.notebook-ruled {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #e8e1d2 31px,
+    #e8e1d2 32px
+  );
+  line-height: 32px;
+}
+
+/* Washi Tape Stickers */
+.washi-tape {
+  position: relative;
+  background: rgba(233, 196, 106, 0.65);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-terracotta {
+  background: rgba(231, 111, 81, 0.65);
+}
+
+.washi-tape-sage {
+  background: rgba(64, 145, 108, 0.55);
+}
+
+.washi-tape-denim {
+  background: rgba(61, 90, 128, 0.55);
+}
+
+/* Tactile Paper Stamp Buttons */
+.btn-paper {
+  transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-paper:hover {
+  transform: translate(-1px, -1px);
+}
+
+.btn-paper:active {
+  transform: translate(2px, 2px);
+  box-shadow: none !important;
+}
+
+/* Custom scrollbars - pencil stroke style */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7beab;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #181816;
+}
+
+/* Titlebar draggable regions */
+.app-drag-region {
+  -webkit-app-region: drag;
+}
+
+.app-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Tactile Craft Range Slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #e3dac8;
+  border: 1.5px solid #181816;
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #e76f51;
+  border: 2px solid #181816;
+  margin-top: -6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 0px 0px #181816;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  transform: scale(1.25);
+  background: #f4a261;
+}
+
+/* Synchronized Karaoke Highlighter Effect */
+.lyric-highlighter {
+  position: relative;
+  display: inline-block;
+  color: #181816;
+  font-weight: 700;
+  transition: all 0.25s ease-out;
+}
+
+.lyric-highlighter::after {
+  content: '';
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: 1px;
+  height: 65%;
+  background: #ffe66d;
+  opacity: 0.75;
+  z-index: -1;
+  transform: rotate(-0.5deg);
+  border-radius: 2px;
+}
+
+/* Continuous Fluid Multi-Phase Equalizer Animations (No gaps, no stutter) */
+@keyframes fluidEq1 {
+  0% { height: 28%; }
+  20% { height: 88%; }
+  45% { height: 42%; }
+  65% { height: 100%; }
+  85% { height: 60%; }
+  100% { height: 28%; }
+}
+
+@keyframes fluidEq2 {
+  0% { height: 75%; }
+  25% { height: 35%; }
+  50% { height: 95%; }
+  70% { height: 45%; }
+  90% { height: 85%; }
+  100% { height: 75%; }
+}
+
+@keyframes fluidEq3 {
+  0% { height: 45%; }
+  30% { height: 95%; }
+  55% { height: 25%; }
+  75% { height: 80%; }
+  90% { height: 50%; }
+  100% { height: 45%; }
+}
+
+@keyframes fluidEq4 {
+  0% { height: 90%; }
+  20% { height: 45%; }
+  40% { height: 85%; }
+  65% { height: 30%; }
+  85% { height: 100%; }
+  100% { height: 90%; }
+}
+
+.fluid-eq-bar-1 {
+  animation: fluidEq1 0.75s ease-in-out infinite;
+  will-change: height;
+}
+
+.fluid-eq-bar-2 {
+  animation: fluidEq2 0.9s ease-in-out infinite;
+  will-change: height;
+}
+
+.fluid-eq-bar-3 {
+  animation: fluidEq3 0.68s ease-in-out infinite;
+  will-change: height;
+}
+
+.fluid-eq-bar-4 {
+  animation: fluidEq4 0.82s ease-in-out infinite;
+  will-change: height;
+}
